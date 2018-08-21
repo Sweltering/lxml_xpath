@@ -1,0 +1,27 @@
+一、XPath语法
+1、节点选取
+/bookstore            选取根元素下所有的bookstore节点内的数据
+//book           从全局节点中找到所有的book节点内的数据
+//book[@price]   选择所有拥有price属性的book节点的数据
+
+2、谓语
+/bookstore/book[1]              选取bookstore下的第一个子元素
+/bookstore/book[last()]         选取bookstore下的倒数第二个book元素
+bookstore/book[position()<3]    选取bookstore下前面两个子元素
+//book[@price]                  选取拥有price属性的book元素
+//book[@price=10]               选取所有属性price等于10的book元素
+
+3、通配符
+/bookstore/*        选取bookstore下的所有子元素
+//book[@*]          选取所有带有属性的book元素
+
+4、选取多个路径
+//bookstore/book | //book/title         选取所有的book元素以及book元素下所有的title元素
+
+5、contains
+//div[contains(@class, "job_detail")]       有时候某个属性中包含多个值，可以使用这个函数
+
+
+二、lxml库
+lxml是一个HTML/XML的解析器，主要的功能是解析和提取HTML/XML数据，可以利用之前的XPath语法，来快速定位特定元素以及节点信息。
+
